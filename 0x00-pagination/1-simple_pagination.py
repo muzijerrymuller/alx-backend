@@ -5,9 +5,9 @@ basic pagination techniques by defining an index range function to
 determine data slicing boundaries and a server class to cache, 
 retrieve, and paginate data.
 """
-import math
 import csv
-from typing import List, Tuple
+import math
+from typing import List
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
