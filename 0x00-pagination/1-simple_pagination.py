@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Simple pagination example for managing and retrieving paginated
 data from a dataset of popular baby names. The script demonstrates 
-basic pagination techniques by defining an index range function to 
+basic pagination techniques by defining an index range function to
 determine data slicing boundaries and a server class to cache, 
 retrieve, and paginate data.
 """
@@ -14,13 +14,13 @@ from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Calculates the starting and ending 
+    """Calculates the starting and ending
     index for a given page and page size.
     This function is used to determine the range of rows that should
     be returned based on the current page and the number of records
-    per page (`page_size`). It calculates the start index as the 
-    product of `(page - 1) * page_size` and the end index as 
-    `start + page_size`, effectively covering all items on the 
+    per page (`page_size`). It calculates the start index as the
+    product of `(page - 1) * page_size` and the end index as
+    `start + page_size`, effectively covering all items on the
     specified page.
     Args:
     page (int): The page number (starting from 1).
@@ -37,8 +37,8 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 class Server:
     """Server class to handle and paginate a dataset of popular baby names.
     The `Server` class loads a CSV file of popular baby names and caches
-    it in memory, allowing for efficient repeated access. The class 
-    provides a method `get_page` to return paginated slices of the data 
+    it in memory, allowing for efficient repeated access. The class
+    provides a method `get_page` to return paginated slices of the data
     based on a given page and page size, leveraging the `index_range`
     helper function to determine the appropriate slice.
     Attributes:
@@ -51,7 +51,7 @@ class Server:
         The `__dataset` attribute is initially set to `None`, indicating
         that the dataset has not been loaded yet. This lazy-loading approach
         means the dataset will only be loaded into memory the first time
-        it is needed, avoiding unnecessary file reads and memory usage 
+        it is needed, avoiding unnecessary file reads and memory usage
         if the data is never requested.
         """
         self.__dataset = None
