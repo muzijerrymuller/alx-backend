@@ -7,7 +7,7 @@ retrieve, and paginate data.
 """
 import csv
 import math
-from typing import List
+from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
