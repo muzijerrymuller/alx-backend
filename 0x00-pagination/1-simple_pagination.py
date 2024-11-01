@@ -5,6 +5,8 @@ basic pagination techniques by defining an index range function to
 determine data slicing boundaries and a server class to cache, 
 retrieve, and paginate data.
 """
+
+
 import csv
 import math
 from typing import List, Tuple
@@ -71,7 +73,7 @@ class Server:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
                 dataset = [row for row in reader]
-            self.__dataset = dataset[1:]  # Skip header
+            self.__dataset = dataset[1:]
 
         return self.__dataset
 
