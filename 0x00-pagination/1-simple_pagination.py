@@ -11,7 +11,8 @@ from typing import List, Tuple
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Calculates the starting and ending index for a given page and page size.
+    """Calculates the starting and ending 
+    index for a given page and page size.
 
     This function is used to determine the range of rows that should
     be returned based on the current page and the number of records
@@ -39,13 +40,11 @@ class Server:
     The `Server` class loads a CSV file of popular baby names and caches
     it in memory, allowing for efficient repeated access. The class 
     provides a method `get_page` to return paginated slices of the data 
-    based on a given page and page size, leveraging the `index_range` 
+    based on a given page and page size, leveraging the `index_range`
     helper function to determine the appropriate slice.
-
     Attributes:
         DATA_FILE (str): The path to the CSV file containing the dataset.
     """
-
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
@@ -60,18 +59,18 @@ class Server:
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Loads the dataset from a CSV file into memory if not already loaded.
+        """Loads the dataset from a CSV file
+        into memory if not already loaded.
 
-        This method reads from the CSV file specified by `DATA_FILE` and 
+        This method reads from the CSV file specified by `DATA_FILE` and
         loads the contents into a list of lists, excluding the header row.
-        The loaded data is cached in the `__dataset` attribute to improve 
+        The loaded data is cached in the `__dataset` attribute to improve
         performance for subsequent accesses by avoiding repeated file I/O.
-        If the dataset is already cached, the method simply returns the 
+        If the dataset is already cached, the method simply returns the
         cached data, minimizing file access.
-
         Returns:
             List[List]: A list of lists representing rows from the CSV file,
-                        where each inner list corresponds to a row in the dataset.
+            where each inner list corresponds to a row in the dataset.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -85,21 +84,21 @@ class Server:
         """Returns a specific page of data from the dataset.
 
         Uses the `page` and `page_size` arguments to calculate the
-        appropriate start and end indices for pagination. The method 
+        appropriate start and end indices for pagination. The method
         first verifies that both arguments are positive integers using 
-        assertions to prevent invalid values. It then uses the 
-        `index_range` function to determine the slice boundaries for 
-        the dataset and returns the corresponding rows as a paginated 
-        view. If the starting index exceeds the dataset's length, it 
+        assertions to prevent invalid values. It then uses the
+        `index_range` function to determine the slice boundaries for
+        the dataset and returns the corresponding rows as a paginated
+        view. If the starting index exceeds the dataset's length, it
         returns an empty list.
-
         Args:
             page (int): The page number (must be a positive integer).
             page_size (int): The number of items per page (must be positive).
-
         Returns:
-            List[List]: A list of lists representing rows for the specified page.
-                        Returns an empty list if the page number is out of range.
+            List[List]: A list of lists representing rows
+            for the specified page.
+                        Returns an empty list if the
+                        page number is out of range.
         """
         assert type(page) == int and type(page_size) == int, \
             "Both page and page_size must be integers."
