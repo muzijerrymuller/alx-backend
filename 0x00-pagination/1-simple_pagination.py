@@ -10,21 +10,19 @@ import math
 from typing import List, Tuple
 
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """Calculates the starting and ending 
     index for a given page and page size.
-
     This function is used to determine the range of rows that should
     be returned based on the current page and the number of records
     per page (`page_size`). It calculates the start index as the 
     product of `(page - 1) * page_size` and the end index as 
     `start + page_size`, effectively covering all items on the 
     specified page.
-
     Args:
         page (int): The page number (starting from 1).
         page_size (int): The number of items per page.
-
     Returns:
         Tuple[int, int]: A tuple of two integers representing the start
                          and end indexes for slicing the dataset.
@@ -36,7 +34,6 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 
 class Server:
     """Server class to handle and paginate a dataset of popular baby names.
-
     The `Server` class loads a CSV file of popular baby names and caches
     it in memory, allowing for efficient repeated access. The class 
     provides a method `get_page` to return paginated slices of the data 
@@ -49,7 +46,6 @@ class Server:
 
     def __init__(self):
         """Initializes a new Server instance and prepares the dataset cache.
-
         The `__dataset` attribute is initially set to `None`, indicating
         that the dataset has not been loaded yet. This lazy-loading approach
         means the dataset will only be loaded into memory the first time
@@ -61,7 +57,6 @@ class Server:
     def dataset(self) -> List[List]:
         """Loads the dataset from a CSV file
         into memory if not already loaded.
-
         This method reads from the CSV file specified by `DATA_FILE` and
         loads the contents into a list of lists, excluding the header row.
         The loaded data is cached in the `__dataset` attribute to improve
@@ -82,7 +77,6 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """Returns a specific page of data from the dataset.
-
         Uses the `page` and `page_size` arguments to calculate the
         appropriate start and end indices for pagination. The method
         first verifies that both arguments are positive integers using 
