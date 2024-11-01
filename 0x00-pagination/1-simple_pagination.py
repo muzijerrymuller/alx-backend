@@ -21,11 +21,11 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     `start + page_size`, effectively covering all items on the 
     specified page.
     Args:
-        page (int): The page number (starting from 1).
-        page_size (int): The number of items per page.
+    page (int): The page number (starting from 1).
+    page_size (int): The number of items per page.
     Returns:
-        Tuple[int, int]: A tuple of two integers representing the start
-                         and end indexes for slicing the dataset.
+    Tuple[int, int]: A tuple of two integers representing the start
+    and end indexes for slicing the dataset.
     """
     start = (page - 1) * page_size
     end = start + page_size
@@ -40,7 +40,7 @@ class Server:
     based on a given page and page size, leveraging the `index_range`
     helper function to determine the appropriate slice.
     Attributes:
-        DATA_FILE (str): The path to the CSV file containing the dataset.
+    DATA_FILE (str): The path to the CSV file containing the dataset.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -64,8 +64,8 @@ class Server:
         If the dataset is already cached, the method simply returns the
         cached data, minimizing file access.
         Returns:
-            List[List]: A list of lists representing rows from the CSV file,
-            where each inner list corresponds to a row in the dataset.
+        List[List]: A list of lists representing rows from the CSV file,
+        where each inner list corresponds to a row in the dataset.
         """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
@@ -86,13 +86,13 @@ class Server:
         view. If the starting index exceeds the dataset's length, it
         returns an empty list.
         Args:
-            page (int): The page number (must be a positive integer).
-            page_size (int): The number of items per page (must be positive).
+        page (int): The page number (must be a positive integer).
+        page_size (int): The number of items per page (must be positive).
         Returns:
-            List[List]: A list of lists representing rows
-            for the specified page.
-                        Returns an empty list if the
-                        page number is out of range.
+        List[List]: A list of lists representing rows
+        for the specified page.
+        Returns an empty list if the
+        page number is out of range.
         """
         assert type(page) == int and type(page_size) == int
         assert page > 0 and page_size > 0
