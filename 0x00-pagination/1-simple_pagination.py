@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Simple pagination example for managing and retrieving paginated
 data from a dataset of popular baby names. The script demonstrates 
 basic pagination techniques by defining an index range function to
