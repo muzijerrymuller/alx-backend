@@ -4,6 +4,7 @@ Fundamental Pagination Sample.
 """
 import csv
 from typing import List, Tuple
+from typing import dict
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
