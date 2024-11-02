@@ -2,25 +2,25 @@
 
 '''Task 0: Basic dictionary caching system.
 This module implements a basic caching
-system in the form of the `BasicCache` class. 
+system in the form of the `BasicCache` class.
 The `BasicCache` class provides a
-fundamental framework for storing and retrieving key-value 
+fundamental framework for storing and retrieving key-value
 pairs without any cache eviction policies.
-This is suitable for scenarios where unlimited 
+This is suitable for scenarios where unlimited
 cache size is acceptable, and keys and
-values are not expected to expire or be evicted 
+values are not expected to expire or be evicted
 automatically.
 
 By inheriting from `BaseCaching`, this class
-is designed to support a dictionary-based 
+is designed to support a dictionary-based
 cache system that stores values associated
-with specific keys. `BasicCache` provides two 
+with specific keys. `BasicCache` provides two
 core functionalities: adding items to the
-cache using the `put` method and retrieving 
+cache using the `put` method and retrieving
 items from the cache using the `get` method.
-This implementation demonstrates how to 
+This implementation demonstrates how to
 implement a caching system without
-restrictions on size, as the cache will continue 
+restrictions on size, as the cache will continue
 to grow with every added item until
 it potentially reaches memory limits.
 '''
