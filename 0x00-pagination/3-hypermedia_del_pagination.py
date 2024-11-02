@@ -5,7 +5,7 @@ Deletion-resilient hypermedia pagination
 
 import csv
 import math
-from typing import List. Dict. Tuple
+from typing import List, Dict, Tuple
 
 
 class Server:
