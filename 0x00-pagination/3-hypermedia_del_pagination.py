@@ -40,7 +40,6 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            pass
         """
         this part of the code allows for it to
         the pagination to be deletion-resiliant
