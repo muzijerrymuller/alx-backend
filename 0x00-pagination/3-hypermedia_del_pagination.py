@@ -5,7 +5,7 @@ Deletion-resilient hypermedia pagination
 
 import csv
 import math
-from typing import List
+from typing import List. Dict. Tuple
 
 
 class Server:
@@ -41,8 +41,9 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """
-        this part of the code allows for it to
+        this part of the code allows for
         the pagination to be deletion-resiliant
+        by allowing acess by index even if items are removed
         """
 
         dataset = self.indexed_dataset()
