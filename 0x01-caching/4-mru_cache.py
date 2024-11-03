@@ -10,7 +10,6 @@ class MRUCache(BaseCaching):
     data storage by utilizing the Most Recently Used (MRU) removal
     strategy. This cache dynamically retains the most relevant
     data while ensuring optimal performance and memory usage.
-
     When the cache limit is reached, the least recently used item is
     removed, promoting a streamlined caching experience.
     """
@@ -25,15 +24,12 @@ class MRUCache(BaseCaching):
     def put(self, key, item):
         """Inserts an item into the cache, ensuring that the most
         relevant data is stored for quick retrieval.
-
         If the cache exceeds its maximum capacity, the least recently
         used item is discarded, making room for new data while
         maintaining efficiency.
-
         Args:
             key: A unique identifier for the item being cached.
             item: The data or object to be stored in the cache.
-
         If either the key or item is None, this method does nothing,
         safeguarding against invalid entries.
         """
@@ -51,13 +47,10 @@ class MRUCache(BaseCaching):
     def get(self, key):
         """Retrieves an item from the cache based on its key, ensuring
         that frequently accessed data remains easily accessible.
-
         When an item is accessed, it is marked as most recently used,
         thereby influencing the cache's eviction policy.
-
         Args:
             key: The unique identifier for the cached item.
-
         Returns:
             The cached item if it exists; otherwise, returns None.
         """
