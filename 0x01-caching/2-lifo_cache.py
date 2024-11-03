@@ -12,7 +12,7 @@ class LIFOCache(BaseCaching):
     reaches its max size, the last one in is the first one out.
     """
     def __init__(self):
-        """Prepares an orderly cache for storing items with 
+        """Prepares an orderly cache for storing items with
         a Last-In, First-Out approach.
         """
         super().__init__()
@@ -20,7 +20,6 @@ class LIFOCache(BaseCaching):
 
     def put(self, key, item):
         """Adds a new item to the cache with a LIFO flourish!
-        
         If adding this item exceeds the cache limit, the most
         recent entry is dramatically removed to make space.
         Args:
