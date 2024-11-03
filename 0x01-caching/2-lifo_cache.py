@@ -8,7 +8,6 @@ from base_caching import BaseCaching
 class LIFOCache(BaseCaching):
     """A cache system with a dramatic twist! The most recent
     item is the first to leave when space runs out.
-    
     Items are stored in a dictionary, and when the cache
     reaches its max size, the last one in is the first one out.
     """
@@ -24,7 +23,6 @@ class LIFOCache(BaseCaching):
         
         If adding this item exceeds the cache limit, the most
         recent entry is dramatically removed to make space.
-        
         Args:
             key: The identifier for the cached item.
             item: The data or object to be cached.
@@ -40,10 +38,8 @@ class LIFOCache(BaseCaching):
 
     def get(self, key):
         """Retrieves an item by its key, if it exists.
-        
         Args:
             key: The key tied to the item you want to retrieve.
-        
         Returns:
             The cached item if it exists; otherwise, None.
         """
