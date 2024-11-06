@@ -9,9 +9,11 @@ support using Babel. Available languages are English and French.
 from flask import Flask, render_template
 from flask_babel import Babel
 
+
 class Config:
     """
-    Configuration class for setting up available languages, default locale, and timezone.
+    Configuration class for setting up available languages,
+    default locale, and timezone.
     """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -22,6 +24,7 @@ app.config.from_object(Config)
 
 babel = Babel(app)
 
+
 @app.route('/')
 def home():
     """
@@ -30,6 +33,7 @@ def home():
         Rendered HTML template for the index page.
     """
     return render_template('1-index.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
