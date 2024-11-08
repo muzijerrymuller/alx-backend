@@ -3,8 +3,10 @@
 This script initializes a simple Flask application that incorporates
 internationalization (i18n) features via Flask-Babel. The application is
 configured to support multiple languages, enabling users to view the web
-pages in either English or French based on their preferences. The configuration
-is structured to promote seamless adaptability for additional languages, timezone
+pages in either English or French based on their
+preferences. The configuration
+is structured to promote seamless adaptability
+for additional languages, timezone
 handling, and robust locale management.
 Modules:
     flask_babel: Provides the Babel extension for i18n support within Flask.
@@ -18,13 +20,15 @@ from flask import Flask, render_template, request
 class Config:
     """Configuration class for Flask-Babel settings.
     This class encapsulates essential configurations required by Flask-Babel,
-    such as supported languages, the default language locale, and the timezone.
+    such as supported languages, the default language locale,
+    and the timezone.
     Designed to be modular and easily extensible, these settings serve as the
     backbone of the application’s localization functionality, allowing for
     seamless language switching and timezone management.
     Attributes:
-        LANGUAGES (list): Specifies the supported languages for the application.
-        BABEL_DEFAULT_LOCALE (str): Sets the default language (locale) for the app.
+    LANGUAGES (list): Specifies the supported languages for the application.
+    BABEL_DEFAULT_LOCALE (str): Sets the default language
+    (locale) for the app.
         BABEL_DEFAULT_TIMEZONE (str): Defines the default timezone for Babel.
     """
     LANGUAGES = ["en", "fr"]
